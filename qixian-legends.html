@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杞县传说集锦 · 杞人忧天故里</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;900&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5efdd;
+  --paper-deep:#ede3c8;
+  --ink:#2c2822;
+  --ink-soft:#5d5546;
+  --cinnabar:#a63a2a;
+  --cinnabar-deep:#8a2d20;
+  --gold:#9a7b4f;
+  --qing:#3d5a57;
+  --line:rgba(60,50,35,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Noto Serif SC','STSong','SimSun',serif;
+  line-height:1.9;
+  background-image:
+    radial-gradient(ellipse at 20% 10%,rgba(160,140,100,.10),transparent 55%),
+    radial-gradient(ellipse at 85% 85%,rgba(120,100,70,.08),transparent 50%);
+  overflow-x:hidden;
+}
+::selection{background:var(--cinnabar);color:#fff}
+
+/* ---------- 顶部导航 ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 2rem;
+  background:rgba(245,239,221,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:0 4px 24px rgba(60,45,25,.15)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink)}
+.brand .seal{
+  width:34px;height:34px;border-radius:6px;
+  background:var(--cinnabar);color:#f8f2e2;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.15rem;
+  box-shadow:2px 2px 0 rgba(138,45,32,.35);
+  transform:rotate(-4deg);
+}
+.brand span{font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.3rem;letter-spacing:.15em}
+.nav-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.nav-links a{
+  color:var(--ink-soft);text-decoration:none;font-size:.9rem;letter-spacing:.1em;
+  padding:.2rem 0;border-bottom:2px solid transparent;transition:.25s;
+}
+.nav-links a:hover{color:var(--cinnabar);border-bottom-color:var(--cinnabar)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ---------- 卷首 Hero ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('images/hero-mountains.jpg') center/cover no-repeat;
+  filter:sepia(.25) brightness(1.02);
+  animation:slowZoom 30s ease-in-out infinite alternate;
+}
+@keyframes slowZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(245,239,221,.55) 0%,rgba(245,239,221,.25) 40%,rgba(245,239,221,.78) 82%,var(--paper) 100%);
+}
+.hero-inner{position:relative;z-index:2;padding:0 1.5rem}
+.hero .cloud-seal{
+  display:inline-block;margin-bottom:1.4rem;
+  padding:.35rem 1.1rem;border:1px solid var(--gold);border-radius:999px;
+  color:var(--gold);font-size:.85rem;letter-spacing:.4em;text-indent:.4em;
+  background:rgba(245,239,221,.5);
+}
+.hero h1{
+  font-family:'Ma Shan Zheng','Zhi Mang Xing',KaiTi,serif;
+  font-size:clamp(3.2rem,9vw,7rem);
+  letter-spacing:.18em;color:var(--ink);
+  text-shadow:0 2px 0 rgba(255,255,255,.35),0 10px 40px rgba(80,60,30,.25);
+  line-height:1.25;
+}
+.hero .sub{
+  margin-top:1.2rem;font-size:clamp(1rem,2.2vw,1.35rem);
+  color:var(--ink-soft);letter-spacing:.5em;text-indent:.5em;
+}
+.hero .quote{
+  margin-top:2.2rem;display:inline-block;
+  padding:.9rem 1.6rem;max-width:640px;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  color:var(--ink-soft);font-size:.95rem;letter-spacing:.12em;
+  background:rgba(245,239,221,.35);
+}
+.hero-stamp{
+  position:absolute;right:clamp(1rem,6vw,5rem);bottom:16vh;z-index:2;
+  width:92px;height:92px;border-radius:10px;
+  background:var(--cinnabar);
+  color:#f8f2e2;display:flex;align-items:center;justify-content:center;
+  font-family:'Zhi Mang Xing','Ma Shan Zheng',KaiTi,serif;
+  font-size:1.9rem;line-height:1.15;text-align:center;
+  box-shadow:4px 4px 0 rgba(138,45,32,.3), inset 0 0 12px rgba(0,0,0,.25);
+  transform:rotate(6deg);
+  opacity:.92;
+}
+.scroll-hint{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:2;
+  color:var(--ink-soft);font-size:.8rem;letter-spacing:.35em;text-indent:.35em;
+  animation:bob 2.4s ease-in-out infinite;
+}
+.scroll-hint::after{
+  content:'';display:block;margin:.5rem auto 0;
+  width:1px;height:34px;background:linear-gradient(var(--ink-soft),transparent);
+}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ---------- 通用版块 ---------- */
+.wrap{max-width:1060px;margin:0 auto;padding:0 1.6rem}
+section{padding:4.5rem 0}
+.section-head{text-align:center;margin-bottom:3rem}
+.section-head .eyebrow{
+  color:var(--gold);letter-spacing:.5em;text-indent:.5em;font-size:.85rem;margin-bottom:.8rem;
+}
+.section-head h2{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:clamp(1.9rem,4vw,2.6rem);
+  letter-spacing:.25em;color:var(--ink);
+}
+.section-head .rule{
+  width:120px;height:1px;margin:1.1rem auto 0;position:relative;background:var(--line);
+}
+.section-head .rule::after{
+  content:'❖';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  background:var(--paper);padding:0 .7rem;color:var(--cinnabar);font-size:.8rem;
+}
+
+/* ---------- 引言 ---------- */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:820px){.intro-grid{grid-template-columns:1fr}}
+.intro-text p{margin-bottom:1.1rem;text-align:justify;color:var(--ink-soft)}
+.intro-text p:first-child::first-letter{
+  font-family:'Ma Shan Zheng',KaiTi,serif;
+  font-size:3.1em;float:left;line-height:1;margin:.06em .12em 0 0;color:var(--cinnabar);
+}
+.intro-fig{position:relative}
+.intro-fig img{
+  width:100%;border-radius:6px;display:block;
+  box-shadow:0 20px 50px rgba(70,55,30,.28);
+  border:6px solid #fbf7ea;outline:1px solid var(--line);
+  filter:sepia(.15);
+}
+.intro-fig .cap{
+  position:absolute;left:1rem;bottom:1rem;
+  background:rgba(44,40,34,.78);color:#efe6cf;
+  padding:.3rem .9rem;font-size:.8rem;letter-spacing:.2em;border-radius:3px;
+}
+.stats{display:flex;gap:2.5rem;margin-top:1.6rem;flex-wrap:wrap}
+.stat b{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:2rem;color:var(--cinnabar);
+  display:block;line-height:1.1;
+}
+.stat span{font-size:.82rem;color:var(--ink-soft);letter-spacing:.15em}
+
+/* ---------- 目录 ---------- */
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+.toc-card{
+  position:relative;display:block;text-decoration:none;color:var(--ink);
+  background:linear-gradient(160deg,#fbf6e8,#f1e7cd);
+  border:1px solid var(--line);border-radius:6px;
+  padding:1.4rem 1.3rem 1.2rem;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.toc-card::before{
+  content:attr(data-num);
+  position:absolute;right:.6rem;top:.1rem;
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:3.4rem;color:rgba(166,58,42,.13);
+}
+.toc-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(80,60,30,.22)}
+.toc-card .t{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.35rem;letter-spacing:.1em;margin-bottom:.3rem;
+}
+.toc-card .s{font-size:.8rem;color:var(--ink-soft);letter-spacing:.12em}
+.toc-card .go{
+  margin-top:.9rem;display:inline-block;font-size:.78rem;color:var(--cinnabar);letter-spacing:.2em;
+}
+
+/* ---------- 故事篇章 ---------- */
+.story{
+  position:relative;
+  background:linear-gradient(180deg,transparent,rgba(160,140,100,.07) 12%,rgba(160,140,100,.07) 88%,transparent);
+}
+.story:nth-of-type(even){background:transparent}
+.story-frame{
+  display:grid;grid-template-columns:84px 1fr;gap:2.2rem;
+  border:1px solid var(--line);border-radius:8px;
+  background:#faf4e4;
+  box-shadow:0 14px 40px rgba(80,62,32,.12);
+  padding:2.6rem 2.4rem 2.4rem;
+  position:relative;
+}
+.story-frame::before{
+  content:'';position:absolute;inset:8px;
+  border:1px solid rgba(60,50,35,.15);border-radius:5px;pointer-events:none;
+}
+@media(max-width:720px){
+  .story-frame{grid-template-columns:1fr;padding:2rem 1.3rem}
+}
+.story-side{
+  writing-mode:vertical-rl;
+  display:flex;align-items:center;gap:1.1rem;
+  border-right:1px solid var(--line);padding-right:1.6rem;
+}
+@media(max-width:720px){
+  .story-side{writing-mode:horizontal-tb;border-right:none;border-bottom:1px solid var(--line);padding:0 0 1rem}
+}
+.story-num{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:2.6rem;color:var(--cinnabar);
+}
+.story-title-v{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.75rem;letter-spacing:.35em;color:var(--ink);
+}
+.story-body h3{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.9rem;letter-spacing:.15em;margin-bottom:.4rem;
+}
+.src-tag{
+  display:inline-block;margin:.2rem .5rem 1.2rem 0;
+  font-size:.78rem;letter-spacing:.12em;color:var(--qing);
+  border:1px solid rgba(61,90,87,.4);border-radius:3px;padding:.12rem .6rem;
+  background:rgba(61,90,87,.06);
+}
+.story-body p{margin-bottom:1rem;text-align:justify;text-indent:2em;color:#3d372d}
+.story-body p.no-indent{text-indent:0}
+.story-body .yiwen-title{
+  margin:1.6rem 0 .8rem;padding-left:.8rem;border-left:3px solid var(--cinnabar);
+  font-weight:600;color:var(--ink);text-indent:0;letter-spacing:.1em;
+}
+.story-img{
+  margin:1.4rem 0 .4rem;border-radius:6px;overflow:hidden;
+  border:5px solid #fbf7ea;outline:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(70,55,30,.22);
+}
+.story-img img{width:100%;display:block;filter:sepia(.12);transition:transform 6s ease}
+.story-img:hover img{transform:scale(1.05)}
+.story-img figcaption{
+  background:#f3ead2;padding:.45rem 1rem;font-size:.8rem;color:var(--ink-soft);
+  letter-spacing:.15em;border-top:1px solid var(--line);
+}
+.dialogue{
+  margin:1.2rem 0;padding:1.1rem 1.4rem;
+  background:rgba(166,58,42,.05);border:1px dashed rgba(166,58,42,.35);border-radius:6px;
+}
+.dialogue p{text-indent:0;margin-bottom:.5rem}
+.dialogue p:last-child{margin-bottom:0}
+.verse{
+  margin:1.4rem auto;text-align:center;
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.2rem;letter-spacing:.2em;
+  color:var(--cinnabar-deep);line-height:2.1;
+}
+.moral{
+  margin-top:1.5rem;display:flex;gap:1rem;align-items:flex-start;
+  background:linear-gradient(135deg,rgba(61,90,87,.08),rgba(154,123,79,.08));
+  border-left:4px solid var(--qing);border-radius:0 6px 6px 0;
+  padding:1rem 1.3rem;
+}
+.moral .tag{
+  flex:none;font-family:'Ma Shan Zheng',KaiTi,serif;color:var(--qing);
+  border:1px solid var(--qing);border-radius:4px;padding:.1rem .5rem;font-size:.9rem;
+}
+.moral p{text-indent:0;margin:0;font-size:.92rem;color:var(--ink-soft)}
+
+/* ---------- 结尾成语 ---------- */
+.finale{
+  background:linear-gradient(180deg,transparent,rgba(44,40,34,.06));
+}
+.idiom-card{
+  max-width:760px;margin:0 auto;text-align:center;
+  border:1px solid var(--line);border-radius:8px;background:#faf4e4;
+  padding:3rem 2.2rem;position:relative;box-shadow:0 14px 40px rgba(80,62,32,.12);
+}
+.idiom-card::before{content:'';position:absolute;inset:8px;border:1px solid rgba(60,50,35,.15);border-radius:5px;pointer-events:none}
+.idiom-card .big{
+  font-family:'Ma Shan Zheng',KaiTi,serif;font-size:clamp(2.6rem,6vw,3.6rem);
+  letter-spacing:.3em;text-indent:.3em;color:var(--ink);
+}
+.idiom-card .pinyin{color:var(--gold);letter-spacing:.35em;margin:.4rem 0 1.4rem;font-size:.9rem}
+.idiom-card p{color:var(--ink-soft);text-align:justify;text-indent:2em;margin-bottom:.8rem}
+.idiom-stamp{
+  position:absolute;right:1.6rem;top:1.4rem;width:56px;height:56px;border-radius:8px;
+  background:var(--cinnabar);color:#f8f2e2;display:flex;align-items:center;justify-content:center;
+  font-family:'Zhi Mang Xing',KaiTi,serif;font-size:1.15rem;line-height:1.1;text-align:center;
+  transform:rotate(-8deg);box-shadow:3px 3px 0 rgba(138,45,32,.3);
+}
+
+/* ---------- 页脚 ---------- */
+footer{
+  margin-top:3rem;border-top:1px solid var(--line);
+  padding:2.6rem 1.6rem 3rem;text-align:center;color:var(--ink-soft);
+  background:var(--paper-deep);
+}
+footer .f-title{font-family:'Ma Shan Zheng',KaiTi,serif;font-size:1.3rem;letter-spacing:.25em;color:var(--ink);margin-bottom:.7rem}
+footer p{font-size:.85rem;letter-spacing:.1em;margin-bottom:.35rem}
+footer .src{max-width:720px;margin:1.2rem auto 0;font-size:.78rem;line-height:1.8;color:#7d7260}
+
+/* ---------- 滚动显现 ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-bg,.scroll-hint{animation:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top"><span class="seal">杞</span><span>杞县传说集锦</span></a>
+  <div class="nav-links">
+    <a href="#intro">缘起</a>
+    <a href="#s1">杞人忧天</a>
+    <a href="#s2">女娲补天</a>
+    <a href="#s3">共工之战</a>
+    <a href="#s4">高高山</a>
+    <a href="#s5">杞人由来</a>
+    <a href="#s6">武公东迁</a>
+    <a href="#s7">桓公嫁女</a>
+    <a href="#finale">成语</a>
+  </div>
+</nav>
+
+<!-- 卷首 -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <div class="cloud-seal">河南 · 杞县 · 民间文学</div>
+    <h1>杞县传说集锦</h1>
+    <p class="sub">杞人忧天故里 · 千年口耳相传</p>
+    <div class="quote">「杞国有人忧天地崩坠，身亡所寄，废寝食者。」——《列子 · 天瑞》</div>
+  </div>
+  <div class="hero-stamp">忧天<br>传说</div>
+  <div class="scroll-hint">向下翻阅</div>
+</header>
+
+<!-- 缘起 -->
+<section id="intro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">卷 首 语</div>
+      <h2>缘 起</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-text reveal">
+        <p>杞县，古称雍丘，地处豫东平原，是夏禹之后东楼公的封地——古杞国所在。三千年前，这里的一个杞国人因担忧「天塌地陷」而废寝忘食，被列子记入《天瑞》篇，从此「杞人忧天」四字流传千古。</p>
+        <p>然而杞县的传说远不止于此。女娲炼石补苍天、共工怒触不周山的洪荒神话在此皆有回响；高高山拔地而起，相传是「气人」忧天而死所化；武公东迁的泪水化作碱土，杞柳叶上的一缕红至今犹存；桓公嫁女、晋悼夫人「治杞田」「城杞」的故事，更在史册与口传之间交相辉映。</p>
+        <p>本页辑录杞县流传的忧天传说七则，上溯典籍，下采民谣，以飨同好。</p>
+        <div class="stats">
+          <div class="stat"><b>七则</b><span>传说故事</span></div>
+          <div class="stat"><b>四部</b><span>引证典籍</span></div>
+          <div class="stat"><b>千年</b><span>口耳相传</span></div>
+        </div>
+      </div>
+      <figure class="intro-fig reveal">
+        <img src="images/qiren-youtian.jpg" alt="杞人忧天图">
+        <figcaption class="cap">杞人仰首忧天图</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 目录 -->
+<section id="toc" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">目 录</div>
+      <h2>传 说 七 则</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="toc-grid reveal">
+      <a class="toc-card" href="#s1" data-num="壹"><div class="t">杞人忧天</div><div class="s">《列子 · 天瑞》</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s2" data-num="贰"><div class="t">女娲补天</div><div class="s">《淮南子 · 览冥训》</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s3" data-num="叁"><div class="t">共工祝融之战</div><div class="s">《补三皇本纪》等</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s4" data-num="肆"><div class="t">高高山的传说</div><div class="s">杞县故事卷 · 附异文</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s5" data-num="伍"><div class="t">气人 · 启人 · 杞人</div><div class="s">杞人名字之由来</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s6" data-num="陆"><div class="t">武公东迁</div><div class="s">杞国播迁之始</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#s7" data-num="柒"><div class="t">桓公嫁女</div><div class="s">晋悼夫人之智</div><span class="go">展卷 →</span></a>
+      <a class="toc-card" href="#finale" data-num="捌"><div class="t">成语 · 杞人忧天</div><div class="s">千年一叹之寓意</div><span class="go">展卷 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 壹 杞人忧天 -->
+<section class="story" id="s1">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">壹</span>
+        <span class="story-title-v">杞人忧天</span>
+      </div>
+      <div class="story-body">
+        <h3>杞人忧天</h3>
+        <span class="src-tag">典出《列子 · 天瑞》</span>
+        <p>杞国有人忧天地崩坠，身亡所寄，废寝食者。又有忧彼之所忧者，因往晓之，曰：「天，积气耳，亡处亡气。若屈伸呼吸，终日在天中行止，奈何忧崩坠乎？」</p>
+        <p>其人曰：「天果积气，日月星宿，不当坠耶？」晓之者曰：「日月星宿，亦积气中之有光耀者，只使坠，亦不能有所中伤。」其人曰：「奈地坏何？」晓者曰：「地积块耳，充塞四虚，亡处亡块。若躇步跐蹈，终日在地上行止，奈何忧其坏？」其人舍然大喜，晓之者亦舍然大喜。</p>
+        <p>长庐子闻而笑之曰：「虹蜺也，云雾也，风雨也，四时也，此积气之成乎天者也。山岳也，河海也，金石也，火木也，此积形之成乎地者也。知积气也，知积块也，奚谓不坏？……忧其坏者，诚为大远；言其不坏者，亦为未是。」</p>
+        <p>子列子闻而笑曰：「言天地坏者亦谬，言天地不坏者亦谬。坏与不坏，吾所不能知也。虽然，彼一也，此一也。故生不知死，死不知生；来不知去，去不知来。坏与不坏，吾何容心哉？」</p>
+        <div class="moral">
+          <span class="tag">释义</span>
+          <p>杞国有人担心天塌地陷、无处安身，以至废寝忘食；经人开导后方才释然。后以此典比喻不必要或无根据的忧虑。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 贰 女娲补天 -->
+<section class="story" id="s2">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">贰</span>
+        <span class="story-title-v">女娲补天</span>
+      </div>
+      <div class="story-body">
+        <h3>女娲补天</h3>
+        <span class="src-tag">典出《淮南子 · 览冥训第六》</span>
+        <p>往古之时，四极废，九州裂，天不兼覆，地不周载，火爁焱而不灭，水浩洋而不息，猛兽食颛民，鸷鸟攫老弱。</p>
+        <p>于是，女娲炼五色石以补苍天，断鳌足以立四极，杀黑龙以济冀州，积芦灰以止淫水。</p>
+        <p>苍天补，四极正；淫水涸，冀州平；狡虫死，颛民生。</p>
+        <figure class="story-img">
+          <img src="images/nuwa-butian.jpg" alt="女娲补天图">
+          <figcaption>女娲炼五色石以补苍天</figcaption>
+        </figure>
+        <div class="moral">
+          <span class="tag">关联</span>
+          <p>天裂而补之——女娲补天是华夏先民「忧天」想象之源，亦为后世杞人忧天传说的神话底色。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 叁 共工祝融之战 -->
+<section class="story" id="s3">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">叁</span>
+        <span class="story-title-v">共工祝融之战</span>
+      </div>
+      <div class="story-body">
+        <h3>共工祝融之战</h3>
+        <span class="src-tag">唐 · 司马贞《史记 · 补三皇本纪》</span>
+        <p>当其末年也，诸侯有共工氏，任智刑以强，霸而不王，以水乘木，乃与祝融战，不胜而怒，乃头触不周山崩，天柱折，地维缺。</p>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.92rem">按：追溯「共工怒触不周山」的故事，更古老的记载中，共工的对手其实是颛顼，见于《淮南子》和《列子》。</p>
+        <span class="src-tag">《淮南子 · 天文训》</span>
+        <p>昔者共工与颛顼争为帝，怒而触不周之山，天柱折，地维绝。天倾西北，故日月星辰移焉；地不满东南，故水潦尘埃归焉。</p>
+        <figure class="story-img">
+          <img src="images/gonggong.jpg" alt="共工怒触不周山">
+          <figcaption>共工怒触不周山，天柱折，地维绝</figcaption>
+        </figure>
+        <div class="moral">
+          <span class="tag">关联</span>
+          <p>「天倾西北，地陷东南」——共工触山解释了天地之势，也正是杞县高高山传说中「天塌地陷」一语的神话来历。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 肆 高高山 -->
+<section class="story" id="s4">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">肆</span>
+        <span class="story-title-v">高高山的传说</span>
+      </div>
+      <div class="story-body">
+        <h3>高高山的传说</h3>
+        <span class="src-tag">《中国民间文学故事集成 · 河南杞县故事卷》</span>
+        <p>高高山，位于杞县城西约二里的地方。在古时候，那地方曾是一个游览观光、避暑赏玩的好去处。游人到此，无不为高高山的鸟啼蝉鸣、花香树茂、小桥流水、高姿雄峰、白雾缭绕的迷人景色流连忘返。</p>
+        <p>据说，那地方原来也是一马平川的肥沃良田。可谁又能够料想到：一个晴朗朗的天，太阳突然间不见了，天倾西北，地陷东南，天塌地陷啦。要说被吓破了胆的，那就是一个名叫「气人」的人了。一时间，他神智模糊，经脉错乱，乱跑乱喊着：「天塌啦，地陷啦，人不能活啦！」最后还是被「忧天症」给折磨死了。</p>
+        <p>在气人死的地方，突然，平地起了一座非常高大的土山，占地足有一二百亩恁大。人们往山尖上一看，掉帽。都说这山掉帽还看不见顶哩，就给它取个名儿叫「高高山」。从此，高高山的名字就这样被传开了。</p>
+        <figure class="story-img">
+          <img src="images/gaogaoshan.jpg" alt="高高山图">
+          <figcaption>平地而起的高高山，掉帽不见其顶</figcaption>
+        </figure>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.92rem">此后千年，此山数易其名——唐代被兵马司张柔抢占，改称「西山」；宋代山色俊秀，墨客杨侃皇赋诗叹赏，又称「谷林山」；清代杞县知县周玑改称「西岗」，列为杞县八景之一「西岗挺翠」。</p>
+        <div class="verse">翠霭连云起，西岗列古松；<br>霜皮溜雨黑，黛影入天浓。</div>
+        <div class="yiwen-title">异文一 · 禹与气人</div>
+        <p>传说很久很久以前，杞县当时是杞国，地理状况不像现在一马平川，而是丘陵起伏，四周湖泊沼泽，一片洪荒。丘陵上住着一户人家，兄弟二人：大哥叫「禹」，心地善良，处处为别人着想；兄弟叫「气人」，胆小怕事，整天忧心忡忡——天上电闪雷鸣他怕天塌，地下震动他怕地陷。</p>
+        <p>大哥禹决心挖沟开渠、引走湖水，起早贪黑不知干了多少年，反而又逢天降暴雨，水越涨越高，淹没了丘陵上的村庄。胆小的气人不停地自言自语：「这咋办呢，这咋办呢……」最后得了「忧郁症」，疯疯癫癫地在丘陵上跑喊：「天塌了，地陷了，人不能活了！」终被「忧天症」折磨而死。</p>
+        <p>在气人死的地方，平地上突然起了一座高大的土山，将湖泊沼泽填平，方便了人们出行。后人说这是上天的旨意，说气人是为了救助杞人才死的。后来的杞人每到气人死去的那天，都去高高山上烧香，以感恩气人。</p>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.85rem">讲述人：李少白、吕维仁　搜集整理：李国富、吕存伟（1989—1990年）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 伍 气人启人杞人 -->
+<section class="story" id="s5">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">伍</span>
+        <span class="story-title-v">气人 · 启人 · 杞人</span>
+      </div>
+      <div class="story-body">
+        <h3>气人、启人、杞人的传说</h3>
+        <span class="src-tag">《古代杞人的忧思 —— 杞人忧天民俗文化研究》</span>
+        <p>相传很久以前，杞国城西南二里的地方，住着一户人家。一对老夫妻生下一个白白胖胖的小子，从小聪明伶俐，勤奋好学。十三四岁时父母双亡，便自己操持家务，日出而作，日落而息。</p>
+        <p>他在劳作间隙看天上云彩千变万化，夜晚睡不着就起来看星星，养成了白天看云、夜晚观星的习惯。「月昏而风，础润而雨」，经过长年累月的观察，他积累了很多气象知识，无数次验证都很灵验。他又用一年观察家中木桩影子的长短变化，定出夏至、冬至、春分、秋分，把一年分成四季，指导农耕，春种秋收，小日子过得也算富裕。</p>
+        <p>一天，他发现天上云彩变化异常，夜晚星象也是从未见过的模样，再看动物们鸡飞狗跳、蛇鼠乱窜。他料定近期将有大天灾，便进城向东楼公报告：「天将会塌，地将会陷，河水会泛滥。」东楼公大怒：「好好的天，怎能会塌呢。你这是扰乱民心！」将他毒打四十大板，推出门外。</p>
+        <p>第三天，他便在杞国城内奔走呼喊：「天要塌了！天要塌了！」一连几天，吵得人们不得安生，惹恼了文武百官，一齐上奏东楼公要严惩他。东楼公说：「这人真是气人！」——「气人」的名字就这样传开了。</p>
+        <div class="dialogue">
+          <p>「气人」一气之下，用头将杞国城西门撞塌。东楼公勃然大怒，命人将他绳捆索绑押到车前。「气人」又挣脱众人，一头向东楼公撞来，被一剑刺死。顿时天昏地暗，「气人」的尸体瞬间化成了一座大山——人们都叫它「高高山」。</p>
+        </div>
+        <p>「气人」死后不久，杞国就下起了陨石雨，大地被砸出许多大坑，一连几天大雨不停，河水泛滥，房倒屋塌，杞国城成了一片汪洋。这场灾难过后，人们都说：「气人」的奔走呼喊是想告诉咱、启发咱哩，只不过当时咱们没弄明白，以后不能再叫他「气人」啦——为纪念他，改称「启人」。又过了多少年，人们说：「启人」是咱杞国的一个智者，是咱杞国人的形象，就叫他「杞人」吧。</p>
+        <p>从此，「杞人」便在千百年的流传中被传了下来。杞人虽然死了，但他总结的经验一直保存下来——至今随便问一个杞县人，都能说几句气象农谚。</p>
+        <div class="verse">月昏而风，础润而雨。<br>天上鱼鳞斑，晒谷不用翻。</div>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.85rem">讲述人：王文声　搜集整理：王鸿鹏（1990年1月）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 陆 武公东迁 -->
+<section class="story" id="s6">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">陆</span>
+        <span class="story-title-v">武公东迁</span>
+      </div>
+      <div class="story-body">
+        <h3>武公东迁</h3>
+        <span class="src-tag">《古代杞人的忧思 —— 杞人忧天民俗文化研究》</span>
+        <p>夏禹立国之后便有了杞国，殷时或封或绝。周武王灭殷之后，寻得大禹之后东楼公，封之于杞，同宋、陈并称三公之国。周初的杞国上得周天子器重，下得百姓爱戴，风调雨顺，百姓安居乐业。常言道：天有不测风云，人有旦夕祸福。杞国传五世至武公。</p>
+        <p>武公二十八年盛夏的一天，天气突变，北风呼啸、飞沙走石、天昏地暗。转瞬间电闪雷鸣，倾盆大雨连下七七四十九天，整个杞国成为一片黄汤，房屋倒塌，良田被毁。大雨停后，太阳仍不肯露脸，植物日渐枯萎，整个杞国一片死气沉沉。武公郁郁寡欢，卧床不起。</p>
+        <p>大臣贤良奏请设坛祭天，武公带着满朝文武登上高高山，向老天上香求拜，连拜一月，老天就是不肯睁眼。武公的夫人鲁女无奈劝道：「眼下整个杞国已无法让百姓生活下去，为了保全杞国人民，不如向我父亲求救，让他给咱点土地，咱带着杞国人民东迁吧。」</p>
+        <p>武公修书十万火急送往鲁国，鲁君怜悯女儿，同意割出一片土地。来年农历三月初三，武公带领子孙及文武百官祭奠列祖列宗，告别故土，踏上东迁之路。</p>
+        <div class="dialogue">
+          <p>这日，杞国城东门洞开，东迁的队伍长达几里，人群哭声震天、泪如雨下。上至国王大臣，下到黎民百姓，一步三回头，三步九叩首，依依不舍地离开了这片生于斯长于斯的故土。行人的眼泪滴湿了杞国大地，泪水叫醒了杞国的国宝——杞柳。</p>
+        </div>
+        <p>从那以后，杞国遍地生碱，只有杞柳能在这里生存，用它顽强的生命力固守着老杞国人的家园。现在杞县的老人还说：碱土是杞国东迁时人哭的眼泪变的，杞柳叶上有一绺红，是杞国人东迁时哭出的血染上的。</p>
+        <div class="verse">农历三月三，杞王武公向东迁。<br>行人眼泪化碱土，柳叶红是用血染。</div>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.85rem">讲述人：王鸿鹏　搜集整理：周清怀（1990年1月）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 柒 桓公嫁女 -->
+<section class="story" id="s7">
+  <div class="wrap">
+    <div class="story-frame reveal">
+      <div class="story-side">
+        <span class="story-num">柒</span>
+        <span class="story-title-v">桓公嫁女</span>
+      </div>
+      <div class="story-body">
+        <h3>桓公嫁女</h3>
+        <span class="src-tag">《古代杞人的忧思 —— 杞人忧天民俗文化研究》</span>
+        <p>杞国在雍丘时处在郑、宋、陈三国之间，屡受侵伐欺凌。杞武公忍痛离开国土，辗转投亲，最终得了淳于城，又建立杞国。为使杞国生存，武公将珍奇异宝献给鲁桓公，主动通婚结亲，甘为鲁国女婿。然而鲁国不以礼相待——娶来的鲁国公主傲慢放肆，甚至要求杞国迎回已休夫人的尸体安葬，使杞国蒙受奇耻大辱。</p>
+        <p>鲁国对杞国的卑礼寒了杞国人的心。杞桓公打听到北方晋国崛起，便与大臣商议另寻靠山。可多年事鲁，杞国家底已空，无珍奇珠宝可送。大臣说：没有物，只能靠人。</p>
+        <p>杞桓公有一个女儿叫杞姒，长得如花似玉，而且善解人意。她听说此事后找到父亲说：</p>
+        <div class="dialogue">
+          <p>「父亲，谁的女儿不是父母身上掉下的肉，难道您就看着别家骨肉分离吗？为了咱杞国的安宁，女儿愿意去晋国！」</p>
+        </div>
+        <p>别无选择之下，杞桓公忍痛带着女儿朝见晋悼公。晋悼公见杞姒美貌，高兴地答应了婚事，封杞姒为「晋悼夫人」。杞姒到晋后很快博得宠爱，将晋国实权牢牢掌握在手里，为杞国的生存做出了很大贡献——此后六十年，杞国不再朝鲁，鲁国也不敢再对杞国用兵。晋悼夫人还帮助杞国要回了鲁国侵占的土地，并组织鲁、齐、宋等十一国修复杞国的淳于城。</p>
+        <figure class="story-img">
+          <img src="images/jindao-furen.jpg" alt="晋悼夫人出嫁图">
+          <figcaption>杞姒入晋，封「晋悼夫人」</figcaption>
+        </figure>
+        <p>这两件事在历史上影响很大：一件为「治杞田」，一件为「城杞」，在几千年的历史中传为美谈。</p>
+        <p class="no-indent" style="color:var(--ink-soft);font-size:.85rem">讲述人：周玉民　搜集整理：周清怀（1990年11月）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 捌 成语 -->
+<section class="finale" id="finale">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">卷 尾</div>
+      <h2>成 语 中 的 杞 人 忧 天</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="idiom-card reveal">
+      <div class="idiom-stamp">杞人<br>忧天</div>
+      <div class="big">杞人忧天</div>
+      <div class="pinyin">qǐ rén yōu tiān</div>
+      <p>传说杞国有个人怕天塌下来，吃饭睡觉都感到不安（见于《列子 · 天瑞》）。比喻不必要的忧虑。也说「杞人之忧」。</p>
+      <p style="text-align:center;text-indent:0;margin-top:1.4rem;color:var(--qing)">一忧传千古，笑谈亦文章。<br>愿君观此集，知杞县之人杰地灵也。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-title">杞县传说集锦</div>
+  <p>民间文学小组作业 · 杞县相关传说故事辑录</p>
+  <p>整理自《忧天传说集锦》文档</p>
+  <div class="src">资料来源：《列子 · 天瑞》《淮南子》《史记 · 补三皇本纪》《中国民间文学故事集成 · 河南杞县故事卷》《古代杞人的忧思 —— 杞人忧天民俗文化研究》　|　讲述人：李少白、吕维仁、王文声、王鸿鹏、周玉民等　|　搜集整理：李国富、吕存伟、王鸿鹏、周清怀（1989—1990）</div>
+</footer>
+
+<script>
+// 滚动显现
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// 导航阴影
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), { passive: true });
+</script>
+</body>
+</html>
